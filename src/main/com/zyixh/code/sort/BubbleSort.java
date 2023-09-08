@@ -4,8 +4,9 @@ import java.util.Arrays;
 
 /**
  * <p> 冒泡排序(Bubble Sort)</p>
- * <p>Time Complexity: O(n2)</p>
+ * <p>Time Complexity: O(n) - O(n2)</p>
  * <p>Auxiliary Space: O(1)</p>
+ * <p>稳定性：稳定</p>
  *
  * @author: imhuis
  * @date: 2022/3/12
@@ -55,17 +56,17 @@ public class BubbleSort implements IArraySort {
         return arr;
     }
 
-
+    // 冒泡排序变种
     public static int[] bubbleSort2(int[] arr, int length) {
-        int n = 0;
-        for (int i = length - 1; i > 0; i--) {
+        int swapNum = 0;
+        for (int i = length; i > 1; i--) {
             for (int j = 0; j < i; j++) {
                 if (arr[j] > arr[j+1]){
                     int temp = arr[j];
                     arr[j] = arr[j+1];
                     arr[j+1] = temp;
-                    n++;
-                    System.out.println(Arrays.toString(arr) + " " + n);
+                    swapNum++;
+                    System.out.printf("元素交换次数 %d", swapNum);
                 }
             }
         }
@@ -80,23 +81,28 @@ public class BubbleSort implements IArraySort {
      */
     @Override
     public int[] sort(int[] sourceArray) {
-        System.out.println("原始数组：" + Arrays.toString(sourceArray));
+        System.out.printf("source Array:%s", Arrays.toString(sourceArray));
         int[] arr = Arrays.copyOf(sourceArray, sourceArray.length);
         int len = sourceArray.length;
         // 外层循环1开始内层不需要-1
         for (int i = 1; i < len; i++) {
-            // 前两个元素
+            boolean swapped = false;
+            // len - i剩下的循环每次减1
             for (int j = 0; j < len - i; j++) {
                 if (arr[j] > arr[j + 1]) {
                     int temp = arr[j];
                     arr[j] = arr[j + 1];
                     arr[j + 1] = temp;
-                    System.out.println("发生交换:" + Arrays.toString(arr));
+                    swapped = true;
                 }
+            }
+            // 没有元素交换可以直接退出
+            if (!swapped) {
+                break;
             }
         }
 
-        System.out.println("排序后数组：" + Arrays.toString(arr));
+        System.out.printf("Sorting after:%s", Arrays.toString(arr));
         return new int[0];
     }
 
