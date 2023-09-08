@@ -1,0 +1,36 @@
+plugins {
+    id 'java'
+}
+
+group = 'com.zyixh.code'
+version = '0.0.1-SNAPSHOT'
+sourceCompatibility = '11'
+
+repositories {
+    mavenCentral()
+}
+
+sourceSets {
+    main {
+        java {
+            srcDirs = ['src/main']
+        }
+    }
+
+    test {
+        java {
+            srcDirs = ['src/test']
+        }
+    }
+}
+
+buildDir = 'out'
+
+dependencies {
+    implementation 'com.google.guava:guava:31.1-jre'
+    testImplementation("org.junit.jupiter:junit-jupiter-api:5.10.0")
+}
+
+tasks.named('test') {
+    useJUnitPlatform()
+}
