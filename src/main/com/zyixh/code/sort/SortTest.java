@@ -10,7 +10,7 @@ import java.util.Arrays;
 public class SortTest {
 
     public static void main(String[] args) {
-        IArraySort arraySort = new BubbleSort();
+        ISort arraySort = new BubbleSort();
 
         int[] originalArray = new int[]{99, 88, 71, 52, 31, 22, 10, 1, 2};
 

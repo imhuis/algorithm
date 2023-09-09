@@ -11,10 +11,10 @@ import java.util.Arrays;
  * @date: 2022/8/15
  * @description:
  */
-public class InsertionSort implements IArraySort {
+public class InsertionSort implements ISort {
 
     public static void main(String[] args) {
-        IArraySort as = new InsertionSort();
+        ISort as = new InsertionSort();
 
         int[] arr = new int[]{5, 4, 3, 2, 1};
         int[] result = insertionSort(arr);

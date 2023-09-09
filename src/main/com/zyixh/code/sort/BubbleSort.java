@@ -12,7 +12,7 @@ import java.util.Arrays;
  * @date: 2022/3/12
  * @description:
  */
-public class BubbleSort implements IArraySort {
+public class BubbleSort implements ISort {
 
     public static void main(String[] args) {
         int[] bad = new int[]{5, 4, 3, 2, 1};

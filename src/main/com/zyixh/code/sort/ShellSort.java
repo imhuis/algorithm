@@ -1,6 +1,5 @@
 package com.zyixh.code.sort;
 
-import java.awt.image.RasterOp;
 import java.util.Arrays;
 
 /**
@@ -14,11 +13,11 @@ import java.util.Arrays;
  * @date: 2023/9/8
  * @description: 希尔排序相当于多个插入排序
  */
-public class ShellSort implements IArraySort {
+public class ShellSort implements ISort {
 
     public static void main(String[] args) {
         int[] arr = new int[]{91,2,52,8,4,1};
-        IArraySort shell = new ShellSort();
+        ISort shell = new ShellSort();
         shell.sort(arr);
         System.out.printf("after sort:%s", Arrays.toString(arr));
      }

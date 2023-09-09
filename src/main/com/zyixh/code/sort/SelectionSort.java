@@ -9,9 +9,9 @@ import java.util.Arrays;
  *
  * @author: imhuis
  * @date: 2022/8/15
- * @description:
+ * @description: 直接选择排序
  */
-public class SelectionSort implements IArraySort {
+public class SelectionSort implements ISort {
 
     public static void main(String[] args) {
 
