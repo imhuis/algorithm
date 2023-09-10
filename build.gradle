@@ -25,12 +25,17 @@ sourceSets {
     }
 }
 
+test {
+    useJUnitPlatform()
+}
+
 buildDir = 'out'
 
 dependencies {
     implementation 'com.google.guava:guava:31.1-jre'
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk8"
     testImplementation("org.junit.jupiter:junit-jupiter-api:5.10.0")
+    testImplementation("org.junit.jupiter:junit-jupiter-engine:5.10.0")
 }
 
 tasks.named('test') {
