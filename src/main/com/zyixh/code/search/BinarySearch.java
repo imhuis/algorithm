@@ -12,20 +12,23 @@ public class BinarySearch {
         System.out.println(binarySearch(arr, 11));
     }
 
+    /**
+     * return -1 not found
+     */
     public static int binarySearch(int[] arr, int item) {
         int len = arr.length;
         int min = 0;
         int max = len - 1;
 
-        while(min < max) {
-            int midIdx = (min + max) / 2;
+        while(min <= max) {
+            int mid = (min + max) / 2;
 
-            if (arr[midIdx] == item) {
-                return midIdx;
-            } else if (arr[midIdx] > item) {
-                max = midIdx - 1;
+            if (arr[mid] == item) {
+                return mid;
+            } else if (arr[mid] > item) {
+                max = mid - 1;
             }else {
-                min = midIdx + 1;
+                min = mid + 1;
             }
         }
         return -1;
