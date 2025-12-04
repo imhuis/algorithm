@@ -1,10 +1,19 @@
 plugins {
     java
-    kotlin("jvm") version "2.2.21"
+    kotlin("jvm") version "2.0.21"
+}
+
+apply {
+    plugin("java")
+    plugin("kotlin")
 }
 
 java {
     sourceCompatibility = JavaVersion.VERSION_17
+}
+
+kotlin {
+    jvmToolchain(17)
 }
 
 group = "com.zyixh.code"
@@ -26,6 +35,10 @@ sourceSets.test {
 
 tasks.test {
     useJUnitPlatform()
+}
+
+tasks.withType<org.jetbrains.kotlin.gradle.tasks.KotlinJvmCompile>().configureEach {
+    jvmTargetValidationMode.set(org.jetbrains.kotlin.gradle.dsl.jvm.JvmTargetValidationMode.WARNING)
 }
 
 dependencies {
