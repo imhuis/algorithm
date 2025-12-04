@@ -1,6 +1,4 @@
-package com.zyixh.code.list;
-
-import org.checkerframework.framework.qual.LiteralKind;
+package com.zyixh.code.algorithm.list;
 
 /**
  * @author: imhuis
